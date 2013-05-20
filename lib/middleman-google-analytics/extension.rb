@@ -1,6 +1,6 @@
 module Middleman
   module GoogleAnalytics
-    class Options < Struct.new(:tracking_id); end
+    class Options < Struct.new(:tracking_id, :anonymize_ip); end
 
     class << self
       def options
@@ -18,14 +18,21 @@ module Middleman
 
     module InstanceMethods
       def google_analytics_tag
-        tracking_id = ::Middleman::GoogleAnalytics.options.tracking_id
-        if(tracking_id)
-          return %Q{<script type="text/javascript">
+        options = ::Middleman::GoogleAnalytics.options
+        if tracking_id = options.tracking_id
+          gaq = []
+          gaq << ['_setAccount', "#{tracking_id}"]
+          gaq << ['_gat._anonymizeIp'] if options.anonymize_ip
+          gaq << ['_trackPageview']
+          %Q{<script type="text/javascript">
 //<![CDATA[
-  var _gaq=[['_setAccount','#{tracking_id}'],['_trackPageview']];
-  (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+  var _gaq = _gaq || [];
+  #{gaq.map! { |x| "_gaq.push(#{x});" }.join("\n  ")}
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 //]]>
 </script>}
         end
