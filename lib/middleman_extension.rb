@@ -1,1 +1,1 @@
-require "middleman-google-analytics"
+require 'middleman-google-analytics'
