@@ -1,6 +1,5 @@
 # Require core library
-require "middleman-core"
-
+require 'middleman-core'
 
 # Register extensions which can be activated
 # Make sure we have the version of Middleman we expect

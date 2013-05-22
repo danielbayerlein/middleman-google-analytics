@@ -30,6 +30,15 @@ Or ERB:
 <%= google_analytics_tag %>
 ```
 
+### Configuration
+
+```ruby
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-XXXXXXX-X' # property ID
+  ga.anonymize_ip = true # removing the last octet of the IP address
+end
+```
+
 ## Only Including Tracking Code in Builds
 
 To include the tracking code only in builds, and not when running
