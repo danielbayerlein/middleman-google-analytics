@@ -19,7 +19,8 @@ module Middleman
     module InstanceMethods
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
-        ga = build? ? 'ga' : '/u/ga_debug'
+        options.debug ||= not build?
+        ga = options.debug ? 'ga' : '/u/ga_debug'
         if tracking_id = options.tracking_id
           gaq = []
           gaq << ['_setAccount', "#{tracking_id}"]
