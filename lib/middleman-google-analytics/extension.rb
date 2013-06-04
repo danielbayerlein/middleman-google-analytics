@@ -1,10 +1,10 @@
 module Middleman
   module GoogleAnalytics
-    class Options < Struct.new(:tracking_id, :anonymize_ip); end
+    class Options < Struct.new(:tracking_id, :anonymize_ip, :debug); end
 
     class << self
       def options
-        @@options ||= {}
+        @@options ||= Options.new(options)
       end
 
       def registered(app, options={})
