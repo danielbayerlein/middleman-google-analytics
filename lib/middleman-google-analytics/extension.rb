@@ -19,7 +19,7 @@ module Middleman
     module InstanceMethods
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
-        options.debug ||= (not build?)
+        options.debug ||= development?
         ga = options.debug ? 'ga' : '/u/ga_debug'
         if tracking_id = options.tracking_id
           gaq = []
