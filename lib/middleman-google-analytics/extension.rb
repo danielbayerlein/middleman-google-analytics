@@ -20,7 +20,7 @@ module Middleman
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
         options.debug ||= development?
-        ga = options.debug ? 'ga' : '/u/ga_debug'
+        ga = options.debug ? '/u/ga_debug' : 'ga'
         if tracking_id = options.tracking_id
           gaq = []
           gaq << ['_setAccount', "#{tracking_id}"]
