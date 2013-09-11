@@ -35,6 +35,7 @@ Or ERB:
 ```ruby
 activate :google_analytics do |ga|
   ga.tracking_id = 'UA-XXXXXXX-X' # property ID
+  ga.debug = false # Manually set debug flag (if true, links to /u/ga_debug.js)
   ga.anonymize_ip = true # removing the last octet of the IP address
 end
 ```

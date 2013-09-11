@@ -1,6 +1,6 @@
 module Middleman
   module GoogleAnalytics
-    class Options < Struct.new(:tracking_id, :anonymize_ip); end
+    class Options < Struct.new(:debug, :tracking_id, :anonymize_ip); end
 
     class << self
       def options
@@ -11,6 +11,8 @@ module Middleman
         @@options ||= Options.new(options)
         yield @@options if block_given?
 
+        @@options.debug = (not build?) if @@options.debug.nil?
+
         app.send :include, InstanceMethods
       end
       alias :included :registered
@@ -19,8 +21,7 @@ module Middleman
     module InstanceMethods
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
-        options.debug ||= not build?
-        ga = options.debug ? 'ga' : '/u/ga_debug'
+        ga = options.debug ? 'u/ga_debug' : 'ga'
         if tracking_id = options.tracking_id
           gaq = []
           gaq << ['_setAccount', "#{tracking_id}"]
