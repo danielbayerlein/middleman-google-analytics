@@ -1,6 +1,6 @@
 module Middleman
   module GoogleAnalytics
-    class Options < Struct.new(:debug, :tracking_id, :anonymize_ip); end
+    class Options < Struct.new(:debug, :tracking_id, :anonymize_ip, :domain_name, :allow_linker); end
 
     class << self
       def options
@@ -12,6 +12,10 @@ module Middleman
         yield @@options if block_given?
 
         @@options.debug = (not build?) if @@options.debug.nil?
+        if @@options.allow_linker and not @@options.domain_name
+          $stderr.puts 'Google Analytics: Please specify a domain_name when using allow_linker'
+          raise 'No domain_name given'
+        end
 
         app.send :include, InstanceMethods
       end
@@ -22,9 +26,12 @@ module Middleman
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
         ga = options.debug ? 'u/ga_debug' : 'ga'
+        domain_name = options.domain_name
         if tracking_id = options.tracking_id
           gaq = []
           gaq << ['_setAccount', "#{tracking_id}"]
+          gaq << ['_setDomainName', "#{domain_name}"] if domain_name
+          gaq << ['_setAllowLinker', true] if options.allow_linker
           gaq << ['_gat._anonymizeIp'] if options.anonymize_ip
           gaq << ['_trackPageview']
           %Q{<script type="text/javascript">
