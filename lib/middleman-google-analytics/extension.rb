@@ -4,14 +4,15 @@ module Middleman
 
     class << self
       def options
-        @@options ||= {}
+        @@options ||= Options.new
       end
 
       def registered(app, options={})
-        @@options ||= Options.new(options)
+        @@options ||= Options.new(*options.values_at(*Options.members))
         yield @@options if block_given?
 
-        @@options.debug = (not build?) if @@options.debug.nil?
+        @@options.debug = app.environment != :build if @@options.debug.nil?
+
         if @@options.allow_linker and not @@options.domain_name
           $stderr.puts 'Google Analytics: Please specify a domain_name when using allow_linker'
           raise 'No domain_name given'
