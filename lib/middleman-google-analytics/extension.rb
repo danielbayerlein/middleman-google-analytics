@@ -1,6 +1,6 @@
 module Middleman
   module GoogleAnalytics
-    class Options < Struct.new(:tracking_id, :anonymize_ip, :anonymize_ip, :domain_name, :debug); end
+    class Options < Struct.new(:tracking_id, :anonymize_ip, :allow_linker, :domain_name, :debug); end
 
     class << self
       def options
