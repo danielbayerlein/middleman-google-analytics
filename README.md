@@ -35,7 +35,10 @@ Or ERB:
 ```ruby
 activate :google_analytics do |ga|
   ga.tracking_id = 'UA-XXXXXXX-X' # property ID
+  ga.debug = false # Manually set debug flag (if true, links to /u/ga_debug.js)
   ga.anonymize_ip = true # removing the last octet of the IP address
+  ga.domain_name = 'example.com' # Track for (cross-domain tracking)
+  ga.allow_linker = true # Multiple top-level domains (needs domain_name to be set)
 end
 ```
 
