@@ -1,10 +1,10 @@
 module Middleman
   module GoogleAnalytics
-    class Options < Struct.new(:tracking_id, :anonymize_ip); end
+    class Options < Struct.new(:tracking_id, :anonymize_ip, :debug); end
 
     class << self
       def options
-        @@options ||= {}
+        @@options ||= Options.new(options)
       end
 
       def registered(app, options={})
@@ -19,8 +19,8 @@ module Middleman
     module InstanceMethods
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
-        options.debug ||= not build?
-        ga = options.debug ? 'ga' : '/u/ga_debug'
+        options.debug ||= development?
+        ga = options.debug ? '/u/ga_debug' : 'ga'
         if tracking_id = options.tracking_id
           gaq = []
           gaq << ['_setAccount', "#{tracking_id}"]
