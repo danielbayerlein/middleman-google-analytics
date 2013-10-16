@@ -37,7 +37,6 @@ module Middleman
           gaq << ['_gat._anonymizeIp'] if options.anonymize_ip
           gaq << ['_trackPageview']
           %Q{<script type="text/javascript">
-//<![CDATA[
   var _gaq = _gaq || [];
   #{gaq.map! { |x| "_gaq.push(#{x});" }.join("\n  ")}
   (function() {
@@ -45,7 +44,6 @@ module Middleman
     ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/#{ga}.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-//]]>
 </script>}
         end
       end
