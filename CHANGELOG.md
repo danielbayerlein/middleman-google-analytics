@@ -1,5 +1,10 @@
 # Changes
 
+## 0.0.3, 2014-01-07
+
+* Add license info to gemspec.
+* Add project status info to README.
+
 ## 0.0.2, 2013-10-16
 
 * Remove CDATA markerts that were choking some minifiers.
