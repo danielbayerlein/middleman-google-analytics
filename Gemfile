@@ -10,8 +10,8 @@ group :development do
 end
 
 group :test do
-  gem "cucumber", "~> 1.2.0"
-  gem "fivemat"
-  gem "aruba",    "~> 0.4.11"
+  gem "cucumber", "~> 1.3.1"
+  gem "fivemat",  :github => "tpope/fivemat"
+  gem "aruba",    "~> 0.5.1"
   gem "rspec",    "~> 2.7"
 end
