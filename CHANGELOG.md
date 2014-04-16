@@ -2,9 +2,11 @@
 
 ## HEAD (???)
 
-* Add Cucumber tests
+## 0.1.0 (2014-04-16)
+
+* Add Cucumber tests.
 * Add Universal Analytics support.
-* Cleanup README
+* Cleanup README.
 
 ## 0.0.3 (2014-01-07)
 
