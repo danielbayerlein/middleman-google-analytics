@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.name        = "middleman-google-analytics"
   s.version     = "0.0.3"
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Jon Frisby"]
-  s.email       = ["jfrisby@mrjoy.com"]
+  s.authors     = ["Daniel Bayerlein", "Jon Frisby"]
+  s.email       = ["daniel.bayerlein@googlemail.com", "jfrisby@mrjoy.com"]
   s.homepage    = "http://github.com/MrJoy/middleman-google-analytics"
   s.summary     = %q{A Middleman plugin for handling Google Analytics tracking code.}
   s.license     = "MIT"
