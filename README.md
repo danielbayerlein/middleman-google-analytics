@@ -67,6 +67,11 @@ end
 Once you've bundled you should be able to run middleman as normal, and have it
 display the GA tracking code.
 
+## Special Thanks
+
+* [Jon Frisby (@MrJoy)](https://github.com/MrJoy) - For the initial code.
+* [Atsushi Nagase (@ngs)](https://github.com/ngs) - Cucumber tests + Universal Analytics support
+
 ## Contributing
 
 1. Fork it
