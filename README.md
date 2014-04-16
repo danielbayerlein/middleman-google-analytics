@@ -4,14 +4,6 @@ Middleman-Google-Analytics is a [Middleman](https://github.com/middleman/middlem
 extension that generates Google Analytics tracking code, and keeps your config
 in `config.rb`, where it belongs.
 
-
-## Status
-
-I'm not actively maintaining this project anymore.  Straightforward patches will be merged, and
-simple issues will be addressed but I am interested in having a new maintainer take over the
-project for less trivial changes such as adding `analytics.js` support.
-
-
 ## Installation
 
 If you already have a Middleman project:
