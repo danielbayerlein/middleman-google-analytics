@@ -69,6 +69,6 @@ display the GA tracking code.
 
 ## License
 
-Copyright (c) 2013 Jon Frisby
+Copyright (c) 2014 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
 
-Licensed under the terms of the MIT X11 license.  See LICENSE.
+Copyright (c) 2013 Jon Frisby.
