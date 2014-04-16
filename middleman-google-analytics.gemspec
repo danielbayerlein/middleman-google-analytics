@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
+require "middleman-google-analytics/version"
 
 Gem::Specification.new do |s|
   s.name        = "middleman-google-analytics"
-  s.version     = "0.0.3"
+  s.version     = Middleman::GoogleAnalytics::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Daniel Bayerlein", "Jon Frisby"]
   s.email       = ["daniel.bayerlein@googlemail.com", "jfrisby@mrjoy.com"]
