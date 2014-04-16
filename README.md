@@ -3,38 +3,57 @@
 [![Gem Version](https://badge.fury.io/rb/middleman-google-analytics.svg)](http://badge.fury.io/rb/middleman-google-analytics)
 [![Dependency Status](https://gemnasium.com/danielbayerlein/middleman-google-analytics.svg)](https://gemnasium.com/danielbayerlein/middleman-google-analytics)
 
-middleman-google-analytics is a [Middleman](http://middlemanapp.com)
-extension that generates Google Analytics tracking code, and keeps your config
-in `config.rb`, where it belongs.
+**middleman-google-analytics** is a [Middleman](http://middlemanapp.com)
+extension that generates
+[Google Analytics](https://www.google.de/intl/en/analytics/) tracking code, and
+keeps your config in `config.rb`, where it belongs.
 
 ## Installation
 
-If you already have a Middleman project:
+1. Specify the dependency in your project's `Gemfile`:
 
-Add `gem "middleman-google-analytics"` to your `Gemfile` then open up your
-`config.rb` and add:
+  ```ruby
+  # Gemfile
+  gem "middleman-google-analytics"
+  ```
 
-```ruby
-# Activate google-analytics extension
-activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-XXXXXXX-X'
-end
-```
+2. Activate the Google Analytics extension in your project's `config.rb`:
 
-Then, in your layout, after your footer, call `google_analytics_tag` and
-include the results in the page. For example, in Haml:
+  ```ruby
+  # config.rb
+  activate :google_analytics do |ga|
+    ga.tracking_id = 'UA-XXXXXXX-X'
+  end
+  ```
 
-```haml
-= google_analytics_tag
-```
+3. In your layout, after your footer, call `google_analytics_tag` or
+   `google_analytics_universal_tag` and include the results in the page:
 
-Or ERB:
+  **Haml:**
 
-```erb
-<%= google_analytics_tag %>
-```
+  ```haml
+  # Google Analytics
+  = google_analytics_tag
+  ```
 
-### Configuration
+  ```haml
+  # Universal Analytics
+  = google_analytics_universal_tag
+  ```
+
+  **ERB:**
+
+  ```erb
+  <% # Google Analytics %>
+  <%= google_analytics_tag %>
+  ```
+
+  ```erb
+  <% # Universal Analytics %>
+  <%= google_analytics_universal_tag %>
+  ```
+
+## Configuration
 
 ```ruby
 activate :google_analytics do |ga|
