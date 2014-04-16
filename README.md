@@ -1,6 +1,7 @@
 # middleman-google-analytics
 
 [![Gem Version](https://badge.fury.io/rb/middleman-google-analytics.svg)](http://badge.fury.io/rb/middleman-google-analytics)
+[![Dependency Status](https://gemnasium.com/danielbayerlein/middleman-google-analytics.svg)](https://gemnasium.com/danielbayerlein/middleman-google-analytics)
 
 middleman-google-analytics is a [Middleman](http://middlemanapp.com)
 extension that generates Google Analytics tracking code, and keeps your config
