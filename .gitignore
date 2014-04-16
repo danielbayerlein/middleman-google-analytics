@@ -1,3 +1,18 @@
-# Ignore bundler lock file
-Gemfile.lock
+.DS_Store
+coverage
+rdoc
 pkg
+.sass-cache
+.sassc
+.tmp
+Gemfile.lock
+docs
+.rbenv-*
+.*.swp
+build
+doc
+.yardoc
+tmp
+Makefile
+.mm-pid-*
+*.gem
