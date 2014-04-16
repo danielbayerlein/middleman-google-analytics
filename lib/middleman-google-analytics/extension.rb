@@ -24,11 +24,9 @@ module Middleman
     module InstanceMethods
       def google_analytics_tag
         options = ::Middleman::GoogleAnalytics.options
-
         options.debug = development? if options.debug.nil?
         ga = options.debug ? 'u/ga_debug' : 'ga'
         domain_name = options.domain_name
-
         if tracking_id = options.tracking_id
           gaq = []
           gaq << ['_setAccount', "#{tracking_id}"]
@@ -44,6 +42,24 @@ module Middleman
     ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/#{ga}.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+</script>}
+        end
+      end
+
+      def google_analytics_universal_tag
+        options = ::Middleman::GoogleAnalytics.options
+        options.debug = development? if options.debug.nil?
+        ga = options.debug ? 'u/ga_debug' : 'ga'
+        domain_name = options.domain_name
+        if tracking_id = options.tracking_id
+          %Q{<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '#{ tracking_id }', '#{ domain_name || 'auto' }'#{ options.allow_linker ? ", {'allowLinker': true}" : '' });#{
+    options.anonymize_ip ? "\n  ga('set', 'anonymizeIp', true);" : '' }
+  ga('pageview');
 </script>}
         end
       end
