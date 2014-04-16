@@ -1,5 +1,7 @@
 # middleman-google-analytics
 
+[![Gem Version](https://badge.fury.io/rb/middleman-google-analytics.svg)](http://badge.fury.io/rb/middleman-google-analytics)
+
 middleman-google-analytics is a [Middleman](http://middlemanapp.com)
 extension that generates Google Analytics tracking code, and keeps your config
 in `config.rb`, where it belongs.
