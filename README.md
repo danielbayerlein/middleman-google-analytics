@@ -1,6 +1,6 @@
-# Middleman Google Analytics
+# middleman-google-analytics
 
-Middleman-Google-Analytics is a [Middleman](https://github.com/middleman/middleman)
+middleman-google-analytics is a [Middleman](http://middlemanapp.com)
 extension that generates Google Analytics tracking code, and keeps your config
 in `config.rb`, where it belongs.
 
@@ -8,7 +8,8 @@ in `config.rb`, where it belongs.
 
 If you already have a Middleman project:
 
-Add `gem "middleman-google-analytics"` to your `Gemfile` then open up your `config.rb` and add:
+Add `gem "middleman-google-analytics"` to your `Gemfile` then open up your
+`config.rb` and add:
 
 ```ruby
 # Activate google-analytics extension
@@ -18,7 +19,7 @@ end
 ```
 
 Then, in your layout, after your footer, call `google_analytics_tag` and
-include the results in the page.  For example, in HAML:
+include the results in the page. For example, in Haml:
 
 ```haml
 = google_analytics_tag
@@ -69,8 +70,10 @@ display the GA tracking code.
 
 ## Special Thanks
 
-* [Jon Frisby (@MrJoy)](https://github.com/MrJoy) - For the initial code.
-* [Atsushi Nagase (@ngs)](https://github.com/ngs) - Cucumber tests + Universal Analytics support
+* [Jon Frisby (@MrJoy)](https://github.com/MrJoy)
+  * For the initial code.
+* [Atsushi Nagase (@ngs)](https://github.com/ngs)
+  * Cucumber tests and "Universal Analytics" support.
 
 ## Contributing
 
