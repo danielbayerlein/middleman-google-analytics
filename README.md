@@ -67,6 +67,14 @@ end
 Once you've bundled you should be able to run middleman as normal, and have it
 display the GA tracking code.
 
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new [Pull Request](../../pull/new/master)
+
 ## License
 
 Copyright (c) 2014 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
