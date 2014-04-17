@@ -1,14 +1,17 @@
 language: ruby
 
 rvm:
-  - 1.9.3
-  - 2.0.0
+  - ruby-head
+  - 2.1.1
   - 2.1.0
+  - 2.0.0
+  - 1.9.3
   - jruby-19mode
 
 # Bug in jRuby w/ Rouge: https://github.com/jruby/jruby/issues/1392
 matrix:
   allow_failures:
+    - rvm: ruby-head
     - rvm: jruby-19mode
 
 script: "bundle exec rake test"
