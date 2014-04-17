@@ -22,7 +22,7 @@ Feature: Google Analytics universal tag helper
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-123456-78', 'auto');
-        ga('pageview');
+        ga('send', 'pageview');
       </script>
       """
 
@@ -48,7 +48,7 @@ Feature: Google Analytics universal tag helper
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-123456-78', 'example.com');
-        ga('pageview');
+        ga('send', 'pageview');
       </script>
       """
 
@@ -74,7 +74,7 @@ Feature: Google Analytics universal tag helper
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-123456-78', 'example.com', {'allowLinker': true});
-        ga('pageview');
+        ga('send', 'pageview');
       </script>
       """
 
@@ -101,7 +101,7 @@ Feature: Google Analytics universal tag helper
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-123456-78', 'auto');
         ga('set', 'anonymizeIp', true);
-        ga('pageview');
+        ga('send', 'pageview');
       </script>
       """
   Scenario: Full options
@@ -127,6 +127,6 @@ Feature: Google Analytics universal tag helper
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-123456-78', 'example.com', {'allowLinker': true});
         ga('set', 'anonymizeIp', true);
-        ga('pageview');
+        ga('send', 'pageview');
       </script>
       """
