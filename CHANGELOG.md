@@ -2,6 +2,9 @@
 
 ## HEAD (???)
 
+* Add Ruby 2.1.1 and ruby-head to .travis.yml.
+* Refactoring Middleman::GoogleAnalytics.
+
 ## 0.1.0 (2014-04-16)
 
 * Add Cucumber tests.
