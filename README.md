@@ -45,12 +45,12 @@ keeps your config in `config.rb`, where it belongs.
   **ERB:**
 
   ```erb
-  <% # Google Analytics %>
+  # Google Analytics
   <%= google_analytics_tag %>
   ```
 
   ```erb
-  <% # Universal Analytics %>
+  # Universal Analytics
   <%= google_analytics_universal_tag %>
   ```
 
@@ -58,9 +58,9 @@ keeps your config in `config.rb`, where it belongs.
 
 ```ruby
 activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-XXXXXXX-X' # property ID
+  ga.tracking_id = 'UA-XXXXXXX-X' # Property ID
   ga.debug = false # Manually set debug flag (if true, links to /u/ga_debug.js)
-  ga.anonymize_ip = true # removing the last octet of the IP address
+  ga.anonymize_ip = true # Removing the last octet of the IP address
   ga.domain_name = 'example.com' # Track for (cross-domain tracking)
   ga.allow_linker = true # Multiple top-level domains (needs domain_name to be set)
 end
