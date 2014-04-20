@@ -59,7 +59,7 @@ module Middleman
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', '#{ tracking_id }', '#{ domain_name || 'auto' }'#{ options.allow_linker ? ", {'allowLinker': true}" : '' });#{
     options.anonymize_ip ? "\n  ga('set', 'anonymizeIp', true);" : '' }
-  ga('pageview');
+  ga('send', 'pageview');
 </script>}
         end
       end
