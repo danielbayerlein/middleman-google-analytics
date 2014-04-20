@@ -97,6 +97,7 @@ display the GA tracking code.
   * For the initial code.
 * [Atsushi Nagase (@ngs)](https://github.com/ngs)
   * Cucumber tests and "Universal Analytics" support.
+* [Contributors](../../graphs/contributors)
 
 ## Contributing
 
