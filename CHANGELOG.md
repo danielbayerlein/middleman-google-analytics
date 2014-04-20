@@ -2,6 +2,10 @@
 
 ## HEAD (???)
 
+## 0.1.1 (2014-04-20)
+
+* Fix Universal Analytics code.
+
 ## 0.1.0 (2014-04-16)
 
 * Add Cucumber tests.
