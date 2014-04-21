@@ -6,6 +6,10 @@
 * No longer compatible with Middleman < 3.2.
 * Require Ruby 1.9.3 or greater.
 
+## 0.1.1 (2014-04-20)
+
+* Fix Universal Analytics code.
+
 ## 0.1.0 (2014-04-16)
 
 * Add Universal Analytics support.
