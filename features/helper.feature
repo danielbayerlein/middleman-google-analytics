@@ -128,6 +128,7 @@ Feature: Google Analytics tag helper
         })();
       </script>
       """
+
   Scenario: Full options
     Given a fixture app "test-app"
     And a file named "config.rb" with:

@@ -92,6 +92,7 @@ Feature: Google Analytics universal tag helper
         ga('send', 'pageview');
       </script>
       """
+
   Scenario: Full options
     Given a fixture app "test-app-universal"
     And a file named "config.rb" with:
