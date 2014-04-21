@@ -5,6 +5,8 @@
 * Refactoring Middleman::GoogleAnalytics.
 * No longer compatible with Middleman < 3.2.
 * Require Ruby 1.9.3 or greater.
+* Development option for tracking in development environment.
+* Minify option for compress the JavaScript code.
 
 ## 0.1.1 (2014-04-20)
 

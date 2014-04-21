@@ -75,6 +75,9 @@ activate :google_analytics do |ga|
 
   # Tracking in development environment (default = true)
   ga.development = true
+
+  # Compress the JavaScript code (default = false)
+  ga.minify = false
 end
 ```
 

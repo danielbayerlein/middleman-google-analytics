@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
   s.add_dependency("middleman-core", ["~> 3.2"])
+  s.add_dependency("uglifier", ["~> 2.5"])
 end

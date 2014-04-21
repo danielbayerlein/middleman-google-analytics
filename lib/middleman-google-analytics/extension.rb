@@ -1,3 +1,5 @@
+require 'uglifier'
+
 module Middleman
   class GoogleAnalyticsExtension < Extension
     option :tracking_id, nil, 'Property ID'
@@ -7,6 +9,7 @@ module Middleman
                                  'subdomains'
     option :debug, false, 'Tracking Code Debugger'
     option :development, true, 'Tracking in development environment'
+    option :minify, false, 'Compress the JavaScript code'
 
     def initialize(app, options_hash={}, &block)
       super
@@ -32,6 +35,7 @@ module Middleman
         @options = google_analytics_settings
         file = File.join(File.dirname(__FILE__), 'ga.js.erb')
         content = ERB.new(File.read(file)).result(binding)
+        content = Uglifier.compile(content) if google_analytics_settings.minify
         content_tag(:script, content, type: 'text/javascript')
       end
 
@@ -39,6 +43,7 @@ module Middleman
         @options = google_analytics_settings
         file = File.join(File.dirname(__FILE__), 'analytics.js.erb')
         content = ERB.new(File.read(file)).result(binding)
+        content = Uglifier.compile(content) if google_analytics_settings.minify
         content_tag(:script, content, type: 'text/javascript')
       end
     end
