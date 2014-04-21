@@ -6,7 +6,6 @@ Feature: Google Analytics tag helper
       """
       activate :google_analytics do |ga|
         ga.tracking_id = 'UA-123456-78'
-        ga.debug = false
       end
       """
       Given the Server is running at "test-app"
@@ -57,9 +56,6 @@ Feature: Google Analytics tag helper
       activate :google_analytics do |ga|
         ga.tracking_id = 'UA-123456-78'
         ga.domain_name = 'example.com'
-        ga.debug = false
-        ga.allow_linker = false
-        ga.anonymize_ip = false
       end
       """
       Given the Server is running at "test-app"
@@ -86,9 +82,7 @@ Feature: Google Analytics tag helper
       activate :google_analytics do |ga|
         ga.tracking_id = 'UA-123456-78'
         ga.domain_name = 'example.com'
-        ga.debug = false
         ga.allow_linker = true
-        ga.anonymize_ip = false
       end
       """
       Given the Server is running at "test-app"
@@ -115,9 +109,6 @@ Feature: Google Analytics tag helper
       """
       activate :google_analytics do |ga|
         ga.tracking_id = 'UA-123456-78'
-        ga.domain_name = nil
-        ga.debug = false
-        ga.allow_linker = false
         ga.anonymize_ip = true
       end
       """
@@ -167,4 +158,3 @@ Feature: Google Analytics tag helper
         })();
       </script>
       """
-

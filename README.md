@@ -23,7 +23,7 @@ keeps your config in `config.rb`, where it belongs.
   ```ruby
   # config.rb
   activate :google_analytics do |ga|
-    ga.tracking_id = 'UA-XXXXXXX-X'
+    ga.tracking_id = 'UA-XXXXXXX-X' # Replace with your property ID.
   end
   ```
 
@@ -58,31 +58,23 @@ keeps your config in `config.rb`, where it belongs.
 
 ```ruby
 activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-XXXXXXX-X' # Property ID
-  ga.debug = false # Manually set debug flag (if true, links to /u/ga_debug.js)
-  ga.anonymize_ip = true # Removing the last octet of the IP address
-  ga.domain_name = 'example.com' # Track for (cross-domain tracking)
-  ga.allow_linker = true # Multiple top-level domains (needs domain_name to be set)
-end
-```
+  # Property ID (default = nil)
+  ga.tracking_id = 'UA-XXXXXXX-X'
 
-## Only Including Tracking Code in Builds
+  # Removing the last octet of the IP address (default = false)
+  ga.anonymize_ip = false
 
-To include the tracking code only in builds, and not when running
-`middleman server`, simply add environment-specific configurations in your
-`config.rb`:
+  # Tracking across a domain and its subdomains (default = nil)
+  ga.domain_name = 'example.com'
 
-```ruby
-configure :development do
-  activate :google_analytics do |ga|
-    ga.tracking_id = false
-  end
-end
+  # Tracking across multiple domains and subdomains (default = false)
+  ga.allow_linker = false
 
-configure :build do
-  activate :google_analytics do |ga|
-    ga.tracking_id = 'UA-XXXXXXX-X'
-  end
+  # Tracking Code Debugger (default = false)
+  ga.debug = false
+
+  # Tracking in development environment (default = true)
+  ga.development = true
 end
 ```
 
