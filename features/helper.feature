@@ -129,6 +129,30 @@ Feature: Google Analytics tag helper
       </script>
       """
 
+  Scenario: Disable tracking in development environment
+    Given a fixture app "test-app"
+    And a file named "config.rb" with:
+      """
+      activate :google_analytics do |ga|
+        ga.tracking_id = 'UA-123456-78'
+        ga.development = false
+      end
+      """
+      Given the Server is running at "test-app"
+      When I go to "/"
+      Then I should see:
+      """
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-123456-78"]);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      """
+
   Scenario: Full options
     Given a fixture app "test-app"
     And a file named "config.rb" with:
@@ -139,6 +163,7 @@ Feature: Google Analytics tag helper
         ga.debug = true
         ga.allow_linker = true
         ga.anonymize_ip = true
+        ga.development = true
       end
       """
       Given the Server is running at "test-app"
