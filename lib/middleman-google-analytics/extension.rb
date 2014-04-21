@@ -29,14 +29,14 @@ module Middleman
 
     helpers do
       def google_analytics_tag
-        @env, @options = environment, google_analytics_settings
+        @options = google_analytics_settings
         file = File.join(File.dirname(__FILE__), 'ga.js.erb')
         content = ERB.new(File.read(file)).result(binding)
         content_tag(:script, content, type: 'text/javascript')
       end
 
       def google_analytics_universal_tag
-        @env, @options = environment, google_analytics_settings
+        @options = google_analytics_settings
         file = File.join(File.dirname(__FILE__), 'analytics.js.erb')
         content = ERB.new(File.read(file)).result(binding)
         content_tag(:script, content, type: 'text/javascript')

@@ -6,7 +6,7 @@
   ga = []
   ga << "ga('create', #{create_options.join(', ')});"
   ga << "ga('set', 'anonymizeIp', true);" if @options.anonymize_ip
-  if @env == :development && @options.development || @env != :development
+  if build? || development? && @options.development
     ga << "ga('send', 'pageview');"
   end
 %>

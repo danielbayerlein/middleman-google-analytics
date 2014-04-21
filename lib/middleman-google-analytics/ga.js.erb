@@ -5,7 +5,7 @@
   gaq << ['_setDomainName', "#{@options.domain_name}"] if @options.domain_name
   gaq << ['_setAllowLinker', true] if @options.allow_linker
   gaq << ['_gat._anonymizeIp'] if @options.anonymize_ip
-  if @env == :development && @options.development || @env != :development
+  if build? || development? && @options.development
     gaq << ['_trackPageview']
   end
 %>
