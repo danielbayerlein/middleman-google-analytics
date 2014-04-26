@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors = ["Daniel Bayerlein", "Jon Frisby"]
   s.email = ["daniel.bayerlein@googlemail.com", "jfrisby@mrjoy.com"]
   s.homepage = "https://github.com/danielbayerlein/middleman-google-analytics"
-  s.summary = %q{A Middleman plugin for handling Google Analytics tracking code.}
-  s.description = %q{A longer description of your extension}
+  s.summary = "A Middleman plugin for handling Google Analytics tracking code."
+  s.description = "middleman-google-analytics is a Middleman extension that generates Google Analytics tracking code, and keeps your config in config.rb, where it belongs."
   s.license = "MIT"
 
   s.files = `git ls-files`.split("\n")
