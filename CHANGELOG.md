@@ -2,20 +2,23 @@
 
 ## HEAD (???)
 
+* Refactoring Middleman::GoogleAnalytics.
+* No longer compatible with Middleman < 3.2.
+* Require Ruby 1.9.3 or greater.
+* Development option for tracking in development environment.
+* Minify option for compress the JavaScript code.
+
 ## 0.1.1 (2014-04-20)
 
 * Fix Universal Analytics code.
 
 ## 0.1.0 (2014-04-16)
 
-* Add Cucumber tests.
 * Add Universal Analytics support.
-* Cleanup README.
 
 ## 0.0.3 (2014-01-07)
 
 * Add license info to gemspec.
-* Add project status info to README.
 
 ## 0.0.2 (2013-10-16)
 
