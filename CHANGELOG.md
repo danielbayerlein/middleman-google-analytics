@@ -2,6 +2,12 @@
 
 ## HEAD (???)
 
+## 1.0.1 (2014-06-05)
+
+* Fix conflicting version of Uglifier.
+
+## 1.0.0 (2014-05-09)
+
 * Refactoring Middleman::GoogleAnalytics.
 * No longer compatible with Middleman < 3.2.
 * Require Ruby 1.9.3 or greater.
