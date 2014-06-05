@@ -2,9 +2,13 @@
 
 ## HEAD (???)
 
-## 1.0.1 (2014-06-05)
+## 1.0.2 (2014-06-05)
 
-* Fix conflicting version of Uglifier.
+* Fix conflicting version of Uglifier (Middleman >= 3.2).
+
+## 1.0.1 (2014-06-05) yanked
+
+* Fix conflicting version of Uglifier (Middleman 3.2.2).
 
 ## 1.0.0 (2014-05-09)
 
@@ -18,7 +22,7 @@
 
 * Fix Universal Analytics code.
 
-## 0.1.0 (2014-04-16)
+## 0.1.0 (2014-04-16) yanked
 
 * Add Universal Analytics support.
 
