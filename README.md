@@ -104,6 +104,6 @@ display the GA tracking code.
 
 ## License
 
-Copyright (c) 2014 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
+Copyright (c) 2014-2015 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
 
 Copyright (c) 2013 Jon Frisby.
