@@ -1,4 +1,4 @@
-require 'uglifier'
+require 'middleman-google-analytics/helpers'
 
 module Middleman
   class GoogleAnalyticsExtension < Extension
@@ -20,32 +20,25 @@ module Middleman
     def after_configuration
       unless options.tracking_id
         $stderr.puts 'Google Analytics: Please specify a property ID'
-        raise 'No property ID given'
+        raise 'No property ID given' if display?
       end
 
       if options.allow_linker and not options.domain_name
         $stderr.puts 'Google Analytics: Please specify a domain_name when ' \
                      'using allow_linker'
-        raise 'No domain_name given'
+        raise 'No domain_name given' if display?
       end
     end
 
     helpers do
-      def google_analytics_tag
-        @options = google_analytics_settings
-        file = File.join(File.dirname(__FILE__), 'ga.js.erb')
-        content = ERB.new(File.read(file)).result(binding)
-        content = Uglifier.compile(content) if google_analytics_settings.minify
-        content_tag(:script, content, type: 'text/javascript')
-      end
-
-      def google_analytics_universal_tag
-        @options = google_analytics_settings
-        file = File.join(File.dirname(__FILE__), 'analytics.js.erb')
-        content = ERB.new(File.read(file)).result(binding)
-        content = Uglifier.compile(content) if google_analytics_settings.minify
-        content_tag(:script, content, type: 'text/javascript')
-      end
+      include ::Middleman::GoogleAnalytics::Helpers
     end
+
+    private
+
+    def display?
+      app.build? || app.development? && options.development
+    end
+
   end
 end
