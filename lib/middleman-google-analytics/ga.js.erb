@@ -5,9 +5,7 @@
   gaq << ['_setDomainName', "#{@options.domain_name}"] if @options.domain_name
   gaq << ['_setAllowLinker', true] if @options.allow_linker
   gaq << ['_gat._anonymizeIp'] if @options.anonymize_ip
-  if build? || development? && @options.development
-    gaq << ['_trackPageview']
-  end
+  gaq << ['_trackPageview']
 %>
   var _gaq = _gaq || [];
   <%= gaq.map! { |x| "_gaq.push(#{x});" }.join("\n  ") %>

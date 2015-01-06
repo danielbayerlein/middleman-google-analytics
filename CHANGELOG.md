@@ -2,6 +2,11 @@
 
 ## HEAD (???)
 
+## 1.1.0 (2015-01-06)
+
+* Handling for development option revised, see #19.
+* Refactoring Middleman::GoogleAnalytics.
+
 ## 1.0.2 (2014-06-05)
 
 * Fix conflicting version of Uglifier (Middleman >= 3.2).
