@@ -2,7 +2,7 @@
 
 ## HEAD (???)
 
-## 1.1.0 (???)
+## 1.1.0 (2015-01-06)
 
 * Handling for development option revised, see #19.
 * Refactoring Middleman::GoogleAnalytics.
