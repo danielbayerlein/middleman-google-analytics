@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.required_ruby_version = '>= 1.9.3'
-  s.add_dependency("middleman-core", ["~> 3.2"])
-  s.add_dependency("uglifier", [">= 2.1", "< 3.0"])
+  s.add_dependency("middleman-core", [">= 4.0.0.alpha.1"])
+  s.add_dependency("uglifier", ["~> 2.5"])
 end
