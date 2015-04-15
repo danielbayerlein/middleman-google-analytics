@@ -11,7 +11,7 @@ end
 
 group :test do
   gem 'cucumber'
-  gem 'fivemat', github: 'tpope/fivemat'
+  gem 'fivemat'
   gem 'aruba'
   gem 'rspec'
 end
