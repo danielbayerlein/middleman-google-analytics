@@ -15,7 +15,9 @@ module Middleman
       private
 
       def render_script(template)
-        return nil if development? && !google_analytics_settings.development
+        google_analytics_settings = app.config[:google_analytics_settings]
+
+        return nil if app.development? && !google_analytics_settings.development
 
         @options = google_analytics_settings
         file = File.join(File.dirname(__FILE__), template)

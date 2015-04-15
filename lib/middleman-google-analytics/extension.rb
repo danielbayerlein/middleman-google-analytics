@@ -14,7 +14,7 @@ module Middleman
     def initialize(app, options_hash={}, &block)
       super
 
-      app.set :google_analytics_settings, options
+      app.config.define_setting :google_analytics_settings, options
     end
 
     def after_configuration
