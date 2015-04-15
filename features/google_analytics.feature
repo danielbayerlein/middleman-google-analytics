@@ -92,19 +92,7 @@ Feature: Google Analytics tag helper
     Scenario: Disable tracking in development environment
       Given the Server is running at "disable-app"
       When I go to "/google-analytics.html"
-      Then I should see ""
-        But I should not see:
-          """
-          <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(["_setAccount", "UA-123456-78"]);
-            (function() {
-              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-              ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-          </script>
-          """
+      Then I should see "0" lines
 
     Scenario: Compress the JavaScript code
       Given the Server is running at "compress-js-app"

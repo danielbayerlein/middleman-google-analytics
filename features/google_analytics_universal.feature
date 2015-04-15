@@ -64,17 +64,7 @@ Feature: Google Analytics Universal tag helper
     Scenario: Disable tracking in development environment
       Given the Server is running at "disable-app"
       When I go to "/google-analytics-universal.html"
-      Then I should see ""
-        But I should not see:
-          """
-          <script type="text/javascript">
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-123456-78', 'auto');
-          </script>
-          """
+      Then I should see "0" lines
 
     Scenario: Compress the JavaScript code
       Given the Server is running at "compress-js-app"
