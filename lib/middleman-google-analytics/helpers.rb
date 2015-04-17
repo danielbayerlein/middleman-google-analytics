@@ -15,14 +15,13 @@ module Middleman
       private
 
       def render_script(template)
-        google_analytics_settings = app.config[:google_analytics_settings]
+        options = extensions[:google_analytics].options
 
-        return nil if app.development? && !google_analytics_settings.development
+        return nil if app.development? && !options.development
 
-        @options = google_analytics_settings
         file = File.join(File.dirname(__FILE__), template)
         content = ERB.new(File.read(file)).result(binding)
-        content = Uglifier.compile(content) if google_analytics_settings.minify
+        content = Uglifier.compile(content) if options.minify
         content_tag(:script, content, type: 'text/javascript')
       end
 

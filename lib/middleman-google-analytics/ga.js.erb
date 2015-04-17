@@ -1,10 +1,13 @@
 <%
-  file = @options.debug ? 'u/ga_debug' : 'ga'
+  options = extensions[:google_analytics].options
+
+  file = options.debug ? 'u/ga_debug' : 'ga'
+  
   gaq = []
-  gaq << ['_setAccount', "#{@options.tracking_id}"]
-  gaq << ['_setDomainName', "#{@options.domain_name}"] if @options.domain_name
-  gaq << ['_setAllowLinker', true] if @options.allow_linker
-  gaq << ['_gat._anonymizeIp'] if @options.anonymize_ip
+  gaq << ['_setAccount', "#{options.tracking_id}"]
+  gaq << ['_setDomainName', "#{options.domain_name}"] if options.domain_name
+  gaq << ['_setAllowLinker', true] if options.allow_linker
+  gaq << ['_gat._anonymizeIp'] if options.anonymize_ip
   gaq << ['_trackPageview']
 %>
   var _gaq = _gaq || [];

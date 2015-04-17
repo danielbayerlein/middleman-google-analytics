@@ -11,12 +11,6 @@ module Middleman
     option :development, true, 'Tracking in development environment'
     option :minify, false, 'Compress the JavaScript code'
 
-    def initialize(app, options_hash={}, &block)
-      super
-
-      app.config.define_setting :google_analytics_settings, options
-    end
-
     def after_configuration
       unless options.tracking_id
         $stderr.puts 'Google Analytics: Please specify a property ID'
