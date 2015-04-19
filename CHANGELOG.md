@@ -2,6 +2,9 @@
 
 ## HEAD (???)
 
+* Middleman v4 support added.
+* Global google_analytics_settings removed.
+
 ## 1.1.0 (2015-01-06)
 
 * Handling for development option revised, see #19.
