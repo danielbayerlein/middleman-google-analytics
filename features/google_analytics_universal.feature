@@ -61,18 +61,18 @@ Feature: Google Analytics Universal tag helper
       </script>
       """
 
-    Scenario: Disable tracking in development environment
-      Given the Server is running at "disable-app"
-      When I go to "/google-analytics-universal.html"
-      Then I should see "0" lines
+  Scenario: Disable tracking in development environment
+    Given the Server is running at "disable-app"
+    When I go to "/google-analytics-universal.html"
+    Then I should see "0" lines
 
-    Scenario: Compress the JavaScript code
-      Given the Server is running at "compress-js-app"
-      When I go to "/google-analytics-universal.html"
-      Then I should see:
-        """
-        <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","auto"),ga("send","pageview");</script>
-        """
+  Scenario: Compress the JavaScript code
+    Given the Server is running at "compress-js-app"
+    When I go to "/google-analytics-universal.html"
+    Then I should see:
+      """
+      <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","auto"),ga("send","pageview");</script>
+      """
 
   Scenario: Full options
     Given the Server is running at "full-app"

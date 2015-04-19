@@ -89,18 +89,18 @@ Feature: Google Analytics tag helper
       </script>
       """
 
-    Scenario: Disable tracking in development environment
-      Given the Server is running at "disable-app"
-      When I go to "/google-analytics.html"
-      Then I should see "0" lines
+  Scenario: Disable tracking in development environment
+    Given the Server is running at "disable-app"
+    When I go to "/google-analytics.html"
+    Then I should see "0" lines
 
-    Scenario: Compress the JavaScript code
-      Given the Server is running at "compress-js-app"
-      When I go to "/google-analytics.html"
-      Then I should see:
-        """
-        <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-123456-78"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script>
-        """
+  Scenario: Compress the JavaScript code
+    Given the Server is running at "compress-js-app"
+    When I go to "/google-analytics.html"
+    Then I should see:
+      """
+      <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-123456-78"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script>
+      """
 
   Scenario: Full options
     Given the Server is running at "full-app"
