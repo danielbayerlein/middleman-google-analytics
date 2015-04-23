@@ -1,3 +1,4 @@
+require 'erubis'
 require 'uglifier'
 
 module Middleman
@@ -20,9 +21,23 @@ module Middleman
         return nil if app.development? && !options.development
 
         file = File.join(File.dirname(__FILE__), template)
-        content = ERB.new(File.read(file)).result(binding)
+        context = { options: options }
+        content = Erubis::FastEruby.new(File.read(file)).evaluate(context)
         content = Uglifier.compile(content) if options.minify
-        content_tag(:script, content, type: 'text/javascript')
+
+        if options.output.to_sym == :html
+          content = indent(content) unless options.minify
+          content_tag(:script, content, type: 'text/javascript')
+        else
+          content
+        end
+      end
+
+      # Ugly but true
+      def indent(content)
+        str = "\n"
+        content.each_line { |line| str << line.indent(2) }
+        str
       end
 
     end

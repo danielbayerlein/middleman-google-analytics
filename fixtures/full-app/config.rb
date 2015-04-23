@@ -6,4 +6,5 @@ activate :google_analytics do |ga|
   ga.anonymize_ip = true
   ga.development = true
   ga.minify = true
+  ga.output = :html
 end

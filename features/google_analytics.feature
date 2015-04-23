@@ -21,18 +21,18 @@ Feature: Google Analytics tag helper
     Given the Server is running at "debug-app"
     When I go to "/google-analytics.html"
     Then I should see:
-    """
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(["_setAccount", "UA-123456-78"]);
-      _gaq.push(["_trackPageview"]);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/u/ga_debug.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    """
+      """
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-123456-78"]);
+        _gaq.push(["_trackPageview"]);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/u/ga_debug.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      """
 
   Scenario: Tracking across a domain and its subdomains
     Given the Server is running at "across-a-domain-app"
@@ -108,4 +108,19 @@ Feature: Google Analytics tag helper
     Then I should see:
       """
       <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-123456-78"]),_gaq.push(["_setDomainName","example.com"]),_gaq.push(["_setAllowLinker",!0]),_gaq.push(["_gat._anonymizeIp"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"//ssl":"//www")+".google-analytics.com/u/ga_debug.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}();</script>
+      """
+
+  Scenario: JavaScript output style
+    Given the Server is running at "output-app"
+    When I go to "/javascripts/google_analytics.js"
+    Then I should see:
+      """
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-123456-78"]);
+      _gaq.push(["_trackPageview"]);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
       """

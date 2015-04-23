@@ -54,6 +54,18 @@ keeps your config in `config.rb`, where it belongs.
   <%= google_analytics_universal_tag %>
   ```
 
+  **JavaScript with ERB (js.erb):**
+
+  ```erb
+  # Google Analytics
+  <%= google_analytics_tag %>
+  ```
+
+  ```erb
+  # Universal Analytics
+  <%= google_analytics_universal_tag %>
+  ```
+
 ## Configuration
 
 ```ruby
@@ -78,6 +90,9 @@ activate :google_analytics do |ga|
 
   # Compress the JavaScript code (default = false)
   ga.minify = false
+
+  # Output style - :html includes <script> tag (default = :html)
+  ga.output = :js
 end
 ```
 

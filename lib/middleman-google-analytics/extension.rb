@@ -10,17 +10,24 @@ module Middleman
     option :debug, false, 'Tracking Code Debugger'
     option :development, true, 'Tracking in development environment'
     option :minify, false, 'Compress the JavaScript code'
+    option :output, :html, 'Output style - :html includes <script> tag'
 
     def after_configuration
       unless options.tracking_id
         $stderr.puts 'Google Analytics: Please specify a property ID'
-        raise 'No property ID given' if display?
+        raise ArgumentError, 'No property ID given' if display?
       end
 
       if options.allow_linker and not options.domain_name
         $stderr.puts 'Google Analytics: Please specify a domain_name when ' \
                      'using allow_linker'
-        raise 'No domain_name given' if display?
+        raise ArgumentError, 'No domain_name given' if display?
+      end
+
+      unless [:html, :js].include?(options.output.try(:to_sym))
+        $stderr.puts 'Google Analytics: Please specify a valid output ' \
+                     'type (html|js).'
+        raise ArgumentError, 'Only "html" or "js" allowed' if display?
       end
     end
 
