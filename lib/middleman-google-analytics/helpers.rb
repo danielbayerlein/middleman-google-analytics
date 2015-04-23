@@ -6,11 +6,11 @@ module Middleman
     module Helpers
 
       def google_analytics_tag
-        render_script('ga.js.erb')
+        render_script('analytics.js.erb')
       end
 
       def google_analytics_universal_tag
-        render_script('analytics.js.erb')
+        render_script('analytics_universal.js.erb')
       end
 
       private
