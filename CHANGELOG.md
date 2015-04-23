@@ -5,6 +5,7 @@
 * Middleman v4 support added.
 * Global google_analytics_settings removed.
 * Output option added.
+* Erubis instead of ERB.
 
 ## 1.1.0 (2015-01-06)
 
