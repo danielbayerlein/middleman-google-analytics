@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# TODO: Temp
-gem 'middleman-core', github: 'middleman/middleman', branch: 'master'
-
 # Specify your gem's dependencies in middleman-google-analytics.gemspec
 gemspec
 
