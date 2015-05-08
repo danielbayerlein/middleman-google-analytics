@@ -16,7 +16,9 @@ keeps your config in `config.rb`, where it belongs.
   ```ruby
   # Gemfile for Middleman ~> 3.2
   gem 'middleman-google-analytics', '~> 1.1'
+  ```
 
+  ```ruby
   # Gemfile for Middleman ~> 4.0
   gem 'middleman-google-analytics', '~> 2.0'
   ```
