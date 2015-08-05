@@ -10,6 +10,7 @@ module Middleman
     option :debug, false, 'Tracking Code Debugger'
     option :development, true, 'Tracking in development environment'
     option :minify, false, 'Compress the JavaScript code'
+    option :send_pageview, true, 'Send pageview hit by default'
 
     def initialize(app, options_hash={}, &block)
       super
