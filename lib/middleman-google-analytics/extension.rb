@@ -2,6 +2,7 @@ require 'middleman-google-analytics/helpers'
 
 module Middleman
   class GoogleAnalyticsExtension < Extension
+
     option :tracking_id, nil, 'Property ID'
     option :anonymize_ip, false, 'Removing the last octet of the IP address'
     option :domain_name, nil, 'Tracking across a domain and its subdomains'
