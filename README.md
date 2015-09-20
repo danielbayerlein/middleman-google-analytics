@@ -14,12 +14,6 @@ keeps your config in `config.rb`, where it belongs.
 1. Specify the dependency in your project's `Gemfile`:
 
   ```ruby
-  # Gemfile for Middleman ~> 3.2
-  gem 'middleman-google-analytics', '~> 1.1'
-  ```
-
-  ```ruby
-  # Gemfile for Middleman ~> 4.0
   gem 'middleman-google-analytics', '~> 2.0'
   ```
 
@@ -112,6 +106,8 @@ display the GA tracking code.
   * For the initial code.
 * [Atsushi Nagase (@ngs)](https://github.com/ngs)
   * Cucumber tests and "Universal Analytics" support.
+* [Thomas Reynolds (tdreyno)](https://github.com/tdreyno)
+  * For the great support.
 * [Contributors](../../graphs/contributors)
 
 ## Contributing

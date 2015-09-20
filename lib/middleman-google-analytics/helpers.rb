@@ -18,7 +18,7 @@ module Middleman
       def render_script(template)
         options = extensions[:google_analytics].options
 
-        return nil if app.development? && !options.development
+        return nil if legacy_development? && !options.development
 
         file = File.join(File.dirname(__FILE__), template)
         context = { options: options }
@@ -38,6 +38,11 @@ module Middleman
         str = "\n"
         content.each_line { |line| str << line.indent(2) }
         str
+      end
+
+      # Support for Middleman >= 3.4
+      def legacy_development?
+        try(:development?) || try(:app).development?
       end
 
     end
