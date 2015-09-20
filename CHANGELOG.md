@@ -6,6 +6,8 @@
 * Global google_analytics_settings removed.
 * Output option added.
 * Erubis instead of ERB.
+* Require Ruby 2.0 or greater.
+* Require Middleman 3.4 or greater.
 
 ## 1.1.0 (2015-01-06)
 
