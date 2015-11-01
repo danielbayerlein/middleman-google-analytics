@@ -1,5 +1,6 @@
 require 'erubis'
 require 'uglifier'
+require 'active_support/core_ext/string/indent'
 
 module Middleman
   module GoogleAnalytics
