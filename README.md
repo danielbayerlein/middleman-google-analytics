@@ -52,10 +52,6 @@ keeps your config in `config.rb`, where it belongs.
   # Universal Analytics
   <%= google_analytics_universal_tag %>
   ```
-  
-  NOTE: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.][1]
-  
-  [1]: https://support.google.com/tagmanager/answer/6107124?hl=en
 
   **JavaScript with ERB (js.erb):**
 
@@ -68,6 +64,10 @@ keeps your config in `config.rb`, where it belongs.
   # Universal Analytics
   <%= google_analytics_universal_tag %>
   ```
+
+  :bulb: Note: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.][1]
+
+  [1]: https://support.google.com/tagmanager/answer/6107124?hl=en
 
 ## Configuration
 
