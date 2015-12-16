@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0 (???)
+## 2.0.0 (2015-12-16)
 
 * Middleman v4 support added.
 * Global google_analytics_settings removed.
