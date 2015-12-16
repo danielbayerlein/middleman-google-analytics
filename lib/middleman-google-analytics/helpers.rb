@@ -1,27 +1,49 @@
+require 'erubis'
 require 'uglifier'
+require 'active_support/core_ext/string/indent'
 
 module Middleman
   module GoogleAnalytics
     module Helpers
 
       def google_analytics_tag
-        render_script('ga.js.erb')
+        render_script('analytics.js.erb')
       end
 
       def google_analytics_universal_tag
-        render_script('analytics.js.erb')
+        render_script('analytics_universal.js.erb')
       end
 
       private
 
       def render_script(template)
-        return nil if development? && !google_analytics_settings.development
+        options = extensions[:google_analytics].options
 
-        @options = google_analytics_settings
+        return nil if legacy_development? && !options.development
+
         file = File.join(File.dirname(__FILE__), template)
-        content = ERB.new(File.read(file)).result(binding)
-        content = Uglifier.compile(content) if google_analytics_settings.minify
-        content_tag(:script, content, type: 'text/javascript')
+        context = { options: options }
+        content = Erubis::FastEruby.new(File.read(file)).evaluate(context)
+        content = Uglifier.compile(content) if options.minify
+
+        if options.output.to_sym == :html
+          content = indent(content) unless options.minify
+          content_tag(:script, content, type: 'text/javascript')
+        else
+          content
+        end
+      end
+
+      # Ugly but true
+      def indent(content)
+        str = "\n"
+        content.each_line { |line| str << line.indent(2) }
+        str
+      end
+
+      # Support for Middleman >= 3.4
+      def legacy_development?
+        try(:development?) || try(:app).development?
       end
 
     end

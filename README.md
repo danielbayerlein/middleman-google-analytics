@@ -14,8 +14,7 @@ keeps your config in `config.rb`, where it belongs.
 1. Specify the dependency in your project's `Gemfile`:
 
   ```ruby
-  # Gemfile
-  gem "middleman-google-analytics"
+  gem 'middleman-google-analytics', '~> 2.0'
   ```
 
 2. Activate the Google Analytics extension in your project's `config.rb`:
@@ -53,9 +52,21 @@ keeps your config in `config.rb`, where it belongs.
   # Universal Analytics
   <%= google_analytics_universal_tag %>
   ```
-  
-  NOTE: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.][1]
-  
+
+  **JavaScript with ERB (js.erb):**
+
+  ```erb
+  # Google Analytics
+  <%= google_analytics_tag %>
+  ```
+
+  ```erb
+  # Universal Analytics
+  <%= google_analytics_universal_tag %>
+  ```
+
+  :bulb: Note: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.][1]
+
   [1]: https://support.google.com/tagmanager/answer/6107124?hl=en
 
 ## Configuration
@@ -82,6 +93,9 @@ activate :google_analytics do |ga|
 
   # Compress the JavaScript code (default = false)
   ga.minify = false
+
+  # Output style - :html includes <script> tag (default = :html)
+  ga.output = :js
 end
 ```
 
@@ -96,6 +110,8 @@ display the GA tracking code.
   * For the initial code.
 * [Atsushi Nagase (@ngs)](https://github.com/ngs)
   * Cucumber tests and "Universal Analytics" support.
+* [Thomas Reynolds (tdreyno)](https://github.com/tdreyno)
+  * For the great support.
 * [Contributors](../../graphs/contributors)
 
 ## Contributing
