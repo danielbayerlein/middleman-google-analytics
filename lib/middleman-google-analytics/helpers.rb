@@ -43,7 +43,14 @@ module Middleman
 
       # Support for Middleman >= 3.4
       def legacy_development?
-        try(:development?) || try(:app).development?
+        # Middleman 3.4
+        is_development = try(:development?)
+        unless is_development.nil?
+          return is_development
+        end
+
+        # Middleman 4.x
+        app.development?
       end
 
     end
