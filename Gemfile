@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'middleman-cli', github: 'middleman/middleman', branch: 'master'
 gem 'middleman-core', github: 'middleman/middleman', branch: 'master'
 
 # Specify your gem's dependencies in middleman-google-analytics.gemspec
