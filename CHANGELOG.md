@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 (2015-12-18)
+
+* Patch for #legacy_development?, see #24.
+
 ## 2.0.0 (2015-12-16)
 
 * Middleman v4 support added.
