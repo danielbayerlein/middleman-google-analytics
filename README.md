@@ -65,9 +65,7 @@ keeps your config in `config.rb`, where it belongs.
   <%= google_analytics_universal_tag %>
   ```
 
-  :bulb: Note: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.][1]
-
-  [1]: https://support.google.com/tagmanager/answer/6107124?hl=en
+  :bulb: Note: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.](https://support.google.com/analytics/answer/2790010)
 
 ## Configuration
 
@@ -84,6 +82,9 @@ activate :google_analytics do |ga|
 
   # Tracking across multiple domains and subdomains (default = false)
   ga.allow_linker = false
+
+  # Enhanced Link Attribution (default = false)
+  ga.enhanced_link_attribution = false
 
   # Tracking Code Debugger (default = false)
   ga.debug = false
