@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0 (2016-??-??)
+
+* Support for Enhanced Link Attribution, see #25.
+
 ## 2.0.1 (2015-12-18)
 
 * Patch for #legacy_development?, see #24.
