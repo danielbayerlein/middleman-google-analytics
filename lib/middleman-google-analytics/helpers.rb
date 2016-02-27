@@ -7,21 +7,11 @@ module Middleman
     module Helpers
 
       def google_analytics_tag
-        render_script('analytics.js.erb')
-      end
-
-      def google_analytics_universal_tag
-        render_script('analytics_universal.js.erb')
-      end
-
-      private
-
-      def render_script(template)
         options = extensions[:google_analytics].options
 
         return nil if legacy_development? && !options.development
 
-        file = File.join(File.dirname(__FILE__), template)
+        file = File.join(File.dirname(__FILE__), 'analytics.js.erb')
         context = { options: options }
         content = Erubis::FastEruby.new(File.read(file)).evaluate(context)
         content = Uglifier.compile(content) if options.minify

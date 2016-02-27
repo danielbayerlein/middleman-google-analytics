@@ -2,6 +2,13 @@
 
 ## 3.0.0 (2016-??-??)
 
+* Remove the old GA implementation. The Universal Analytics tag is the new
+  operating standard for the Google Analytics tracking tag.
+
+  See: https://support.google.com/analytics/answer/2790010
+
+  Rename `google_analytics_universal_tag` to `google_analytics_tag`.
+
 ## 2.1.0 (2016-02-21)
 
 * Support for Enhanced Link Attribution, see #25.

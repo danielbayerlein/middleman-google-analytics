@@ -26,46 +26,26 @@ keeps your config in `config.rb`, where it belongs.
   end
   ```
 
-3. In your layout, after your footer, call `google_analytics_tag` or
-   `google_analytics_universal_tag` and include the results in the page:
+3. In your layout, after your footer, call `google_analytics_tag` and include
+   the results in the page:
 
   **Haml:**
 
   ```haml
-  # Google Analytics
   = google_analytics_tag
-  ```
-
-  ```haml
-  # Universal Analytics
-  = google_analytics_universal_tag
   ```
 
   **ERB:**
 
   ```erb
-  # Google Analytics
   <%= google_analytics_tag %>
-  ```
-
-  ```erb
-  # Universal Analytics
-  <%= google_analytics_universal_tag %>
   ```
 
   **JavaScript with ERB (js.erb):**
 
   ```erb
-  # Google Analytics
   <%= google_analytics_tag %>
   ```
-
-  ```erb
-  # Universal Analytics
-  <%= google_analytics_universal_tag %>
-  ```
-
-  :bulb: Note: [The Universal Analytics tag is the new operating standard for the Google Analytics tracking tag.](https://support.google.com/analytics/answer/2790010)
 
 ## Configuration
 
@@ -85,9 +65,6 @@ activate :google_analytics do |ga|
 
   # Enhanced Link Attribution (default = false)
   ga.enhanced_link_attribution = false
-
-  # Tracking Code Debugger (default = false)
-  ga.debug = false
 
   # Tracking in development environment (default = true)
   ga.development = true

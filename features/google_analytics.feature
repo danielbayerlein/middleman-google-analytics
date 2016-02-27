@@ -6,31 +6,12 @@ Feature: Google Analytics tag helper
     Then I should see:
       """
       <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-      """
-
-  Scenario: On debug mode
-    Given the Server is running at "debug-app"
-    When I go to "/google-analytics.html"
-    Then I should see:
-      """
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/u/ga_debug.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-123456-78', 'auto');
+        ga('send', 'pageview');
       </script>
       """
 
@@ -40,15 +21,12 @@ Feature: Google Analytics tag helper
     Then I should see:
       """
       <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_setDomainName", "example.com"]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-123456-78', 'example.com');
+        ga('send', 'pageview');
       </script>
       """
 
@@ -58,16 +36,12 @@ Feature: Google Analytics tag helper
     Then I should see:
       """
       <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_setDomainName", "example.com"]);
-        _gaq.push(["_setAllowLinker", true]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-123456-78', 'example.com', {'allowLinker': true});
+        ga('send', 'pageview');
       </script>
       """
 
@@ -77,15 +51,13 @@ Feature: Google Analytics tag helper
     Then I should see:
       """
       <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_gat._anonymizeIp"]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-123456-78', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
       </script>
       """
 
@@ -99,7 +71,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-123456-78"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script>
+      <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","auto"),ga("send","pageview");</script>
       """
 
   Scenario: Enhanced Link Attribution
@@ -108,15 +80,13 @@ Feature: Google Analytics tag helper
     Then I should see:
       """
       <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_require", "inpage_linkid", "//www.google-analytics.com/plugins/ga/inpage_linkid.js"]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-123456-78', 'auto');
+        ga('require', 'linkid');
+        ga('send', 'pageview');
       </script>
       """
 
@@ -125,7 +95,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-123456-78"]),_gaq.push(["_setDomainName","example.com"]),_gaq.push(["_setAllowLinker",!0]),_gaq.push(["_gat._anonymizeIp"]),_gaq.push(["_require","inpage_linkid","//www.google-analytics.com/plugins/ga/inpage_linkid.js"]),_gaq.push(["_trackPageview"]),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"//ssl":"//www")+".google-analytics.com/u/ga_debug.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(e,a)}();</script>
+      <script type="text/javascript">!function(e,a,n,t,c,i,o){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,i=a.createElement(n),o=a.getElementsByTagName(n)[0],i.async=1,i.src=t,o.parentNode.insertBefore(i,o)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","example.com",{allowLinker:!0}),ga("set","anonymizeIp",!0),ga("require","linkid"),ga("send","pageview");</script>
       """
 
   Scenario: JavaScript output style
@@ -133,14 +103,12 @@ Feature: Google Analytics tag helper
     When I go to "/javascripts/google_analytics.js"
     Then I should see:
       """
-      var _gaq = _gaq || [];
-      _gaq.push(["_setAccount", "UA-123456-78"]);
-      _gaq.push(["_trackPageview"]);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-123456-78', 'auto');
+      ga('send', 'pageview');
       """
 
   Scenario: Build HTML with default configuration
@@ -150,13 +118,11 @@ Feature: Google Analytics tag helper
     Then the file "google-analytics.html" should contain:
       """
       <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-123456-78"]);
-        _gaq.push(["_trackPageview"]);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-123456-78', 'auto');
+        ga('send', 'pageview');
       </script>
       """
