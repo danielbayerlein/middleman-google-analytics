@@ -66,6 +66,12 @@ activate :google_analytics do |ga|
   # Enhanced Link Attribution (default = false)
   ga.enhanced_link_attribution = false
 
+  # Log detail messages to the console (default = false)
+  ga.debug = false
+
+  # Trace debugging will output more verbose information to the console (default = false)
+  ga.debug_trace = false
+
   # Tracking in development environment (default = true)
   ga.development = true
 

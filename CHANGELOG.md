@@ -8,6 +8,7 @@
   See: https://support.google.com/analytics/answer/2790010
 
   Rename `google_analytics_universal_tag` to `google_analytics_tag`.
+* `debug` and `debug_trace` option added, see https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging
 
 ## 2.1.0 (2016-02-21)
 

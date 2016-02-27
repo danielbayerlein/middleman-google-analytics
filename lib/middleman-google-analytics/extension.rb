@@ -9,6 +9,8 @@ module Middleman
     option :allow_linker, false, 'Tracking across multiple domains and ' \
                                  'subdomains'
     option :enhanced_link_attribution, false, 'Enhanced Link Attribution'
+    option :debug, false, 'Log detail messages to the console'
+    option :debug_trace, false, 'Trace debugging will output more verbose information to the console'
     option :development, true, 'Tracking in development environment'
     option :minify, false, 'Compress the JavaScript code'
     option :output, :html, 'Output style - :html includes <script> tag'
