@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.1 (2016-04-24)
+## 2.1.1 (2016-04-26)
 
 * Incompatibility of uglifier with the latest version of Middleman fixed, see #26.
 
