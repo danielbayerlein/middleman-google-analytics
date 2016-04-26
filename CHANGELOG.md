@@ -10,6 +10,10 @@
   Rename `google_analytics_universal_tag` to `google_analytics_tag`.
 * `debug` and `debug_trace` option added, see https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging
 
+## 2.1.1 (2016-04-26)
+
+* Incompatibility of uglifier with the latest version of Middleman fixed, see #26.
+
 ## 2.1.0 (2016-02-21)
 
 * Support for Enhanced Link Attribution, see #25.
