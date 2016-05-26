@@ -14,7 +14,7 @@ keeps your config in `config.rb`, where it belongs.
 1. Specify the dependency in your project's `Gemfile`:
 
   ```ruby
-  gem 'middleman-google-analytics', '~> 2.1'
+  gem 'middleman-google-analytics', '~> 3.0'
   ```
 
 2. Activate the Google Analytics extension in your project's `config.rb`:
