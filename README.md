@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/middleman-google-analytics.svg)](http://badge.fury.io/rb/middleman-google-analytics)
 [![Build Status](https://travis-ci.org/danielbayerlein/middleman-google-analytics.svg?branch=master)](https://travis-ci.org/danielbayerlein/middleman-google-analytics)
 [![Dependency Status](https://gemnasium.com/danielbayerlein/middleman-google-analytics.svg)](https://gemnasium.com/danielbayerlein/middleman-google-analytics)
+[![Coverage Status](https://coveralls.io/repos/github/danielbayerlein/middleman-google-analytics/badge.svg?branch=master)](https://coveralls.io/github/danielbayerlein/middleman-google-analytics?branch=master)
 
 **middleman-google-analytics** is a [Middleman](http://middlemanapp.com)
 extension that generates
