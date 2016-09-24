@@ -9,6 +9,7 @@
 
   Rename `google_analytics_universal_tag` to `google_analytics_tag`.
 * `debug` and `debug_trace` option added, see https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging
+* Coveralls added.
 
 ## 2.1.1 (2016-04-26)
 
