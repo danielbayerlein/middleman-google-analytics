@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.0.0 (2016-??-??)
+## 3.0.0 (2016-12-21)
 
 * Remove the old GA implementation. The Universal Analytics tag is the new
   operating standard for the Google Analytics tracking tag.
