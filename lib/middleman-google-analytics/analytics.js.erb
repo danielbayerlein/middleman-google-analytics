@@ -1,5 +1,5 @@
 <%
-  script = if @options.debug || @options.debug_trace
+  script = if @options.debug || @options.debug_trace || @options.test
     'analytics_debug.js'
   else
     'analytics.js'
@@ -13,6 +13,7 @@
   ga = []
   ga << "window.ga_debug = {trace: true};" if @options.debug_trace
   ga << "ga('create', #{create_options.join(', ')});"
+  ga << "ga('set', 'sendHitTask', null);" if @options.test
   ga << "ga('set', 'anonymizeIp', true);" if @options.anonymize_ip
   ga << "ga('require', 'linkid');" if @options.enhanced_link_attribution
   ga << "ga('send', 'pageview');"

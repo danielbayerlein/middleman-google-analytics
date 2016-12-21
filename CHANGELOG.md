@@ -8,9 +8,10 @@
   See: https://support.google.com/analytics/answer/2790010
 
   Rename `google_analytics_universal_tag` to `google_analytics_tag`.
-* `debug` and `debug_trace` option added, see https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging
-* Coveralls added.
+* `debug`, `debug_trace` and `test` option added, see https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging
+* `disable` option added to disable the extension.
 * Drop support for Ruby 2.1 and 2.0
+* Coveralls added.
 
 ## 2.1.1 (2016-04-26)
 

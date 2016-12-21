@@ -73,8 +73,11 @@ activate :google_analytics do |ga|
   # Trace debugging will output more verbose information to the console (default = false)
   ga.debug_trace = false
 
-  # Tracking in development environment (default = true)
-  ga.development = true
+  # Disable extension (default = false)
+  ga.disable = true
+
+  # Testing your implementation without sending hits (default = true) in development
+  ga.test = true
 
   # Compress the JavaScript code (default = false)
   ga.minify = false

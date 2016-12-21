@@ -4,7 +4,6 @@ activate :google_analytics do |ga|
   ga.allow_linker = true
   ga.enhanced_link_attribution = true
   ga.anonymize_ip = true
-  ga.development = true
   ga.minify = true
   ga.output = :html
 end
