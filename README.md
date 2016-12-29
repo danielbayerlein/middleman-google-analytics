@@ -5,7 +5,7 @@
 [![Dependency Status](https://gemnasium.com/danielbayerlein/middleman-google-analytics.svg)](https://gemnasium.com/danielbayerlein/middleman-google-analytics)
 [![Coverage Status](https://coveralls.io/repos/github/danielbayerlein/middleman-google-analytics/badge.svg?branch=master)](https://coveralls.io/github/danielbayerlein/middleman-google-analytics?branch=master)
 
-**middleman-google-analytics** is a [Middleman](http://middlemanapp.com)
+**middleman-google-analytics** is a [Middleman](https://middlemanapp.com)
 extension that generates
 [Google Analytics](https://www.google.de/intl/en/analytics/) tracking code, and
 keeps your config in `config.rb`, where it belongs.
