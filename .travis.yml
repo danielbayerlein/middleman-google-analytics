@@ -18,6 +18,8 @@ matrix:
   fast_finish: true
   allow_failures:
     - rvm: ruby-head
+    - gemfile: Gemfile-v3
+      rvm: 2.4.0
 
 env:
   global:
