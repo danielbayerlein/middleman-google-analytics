@@ -6,7 +6,7 @@ before_script:
 
 rvm:
   - ruby-head
-  - 2.4.0
+  - 2.4.1
   - 2.3.3
   - 2.2.6
 
@@ -19,7 +19,7 @@ matrix:
   allow_failures:
     - rvm: ruby-head
     - gemfile: Gemfile-v3
-      rvm: 2.4.0
+      rvm: 2.4.1
 
 env:
   global:
