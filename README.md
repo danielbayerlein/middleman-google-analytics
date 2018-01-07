@@ -112,6 +112,6 @@ display the GA tracking code.
 
 ## License
 
-Copyright (c) 2014-2018 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
+Copyright (c) 2014-present Daniel Bayerlein. See [LICENSE](./LICENSE.md) for details.
 
 Copyright (c) 2013 Jon Frisby.
