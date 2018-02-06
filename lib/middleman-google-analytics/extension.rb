@@ -14,6 +14,7 @@ module Middleman
     option :test, false, 'Testing your implementation without sending hits'
     option :minify, false, 'Compress the JavaScript code'
     option :output, :html, 'Output style - :html includes <script> tag'
+    option :variant, :analytics, 'Tracking code variant'
 
     def after_configuration
       options.test = true if legacy_development?
@@ -26,6 +27,11 @@ module Middleman
       if options.allow_linker and not options.domain_name
         $stderr.puts 'Google Analytics: Please specify a domain_name when using allow_linker'
         raise ArgumentError, 'No domain_name given' if app.build?
+      end
+
+      unless [:analytics, :gtag].include?(options.variant.try(:to_sym))
+        $stderr.puts 'Google Analytics: Please specify a valid variant type (analytics|gtag).'
+        raise ArgumentError, 'Only "analytics" or "gtag" allowed' if app.build?
       end
 
       unless [:html, :js].include?(options.output.try(:to_sym))
