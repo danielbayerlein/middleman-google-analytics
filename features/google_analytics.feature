@@ -1,6 +1,6 @@
 Feature: Google Analytics tag helper
 
-  Scenario: Basic tracking code
+  Scenario: Analytics tracking code
     Given the Server is running at "basic-app"
     When I go to "/google-analytics.html"
     Then I should see:
@@ -12,6 +12,22 @@ Feature: Google Analytics tag helper
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-123456-78', 'auto');
         ga('send', 'pageview');
+      </script>
+      """
+
+  Scenario: gtag tracking code
+    Given the Server is running at "gtag-app"
+    When I go to "/google-analytics.html"
+    Then I should see:
+      """
+      <script async src="//www.googletagmanager.com/gtag/js?id=UA-123456-78"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag () {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-123456-78');
       </script>
       """
 
