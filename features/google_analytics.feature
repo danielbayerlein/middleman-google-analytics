@@ -5,7 +5,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -20,7 +20,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -35,7 +35,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -50,7 +50,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -71,7 +71,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","auto"),ga("send","pageview");</script>
+      <script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","auto"),ga("send","pageview");</script>
       """
 
   Scenario: Enhanced Link Attribution
@@ -79,7 +79,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -95,7 +95,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">!function(e,a,n,t,c,i,o){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,i=a.createElement(n),o=a.getElementsByTagName(n)[0],i.async=1,i.src=t,o.parentNode.insertBefore(i,o)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","example.com",{allowLinker:!0}),ga("set","anonymizeIp",!0),ga("require","linkid"),ga("send","pageview");</script>
+      <script>!function(e,a,n,t,c,i,o){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,i=a.createElement(n),o=a.getElementsByTagName(n)[0],i.async=1,i.src=t,o.parentNode.insertBefore(i,o)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-123456-78","example.com",{allowLinker:!0}),ga("set","anonymizeIp",!0),ga("require","linkid"),ga("send","pageview");</script>
       """
 
   Scenario: Debugging
@@ -103,7 +103,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -118,7 +118,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -147,7 +147,7 @@ Feature: Google Analytics tag helper
     When I go to "/google-analytics.html"
     Then I should see:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -164,7 +164,7 @@ Feature: Google Analytics tag helper
     When I cd to "build"
     Then the file "google-analytics.html" should contain:
       """
-      <script type="text/javascript">
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

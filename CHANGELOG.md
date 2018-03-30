@@ -3,6 +3,7 @@
 ## ?.?.? (????-??-??)
 
 * Drop support for Ruby 2.2
+* Remove `type="text/javascript"`
 
 ## 3.0.0 (2016-12-21)
 
