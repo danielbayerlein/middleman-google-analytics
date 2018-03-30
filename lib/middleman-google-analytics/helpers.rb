@@ -11,22 +11,31 @@ module Middleman
 
         return nil if options.disable
 
-        file = File.join(File.dirname(__FILE__), 'analytics.js.erb')
+        file = File.join(File.dirname(__FILE__), "#{options.variant}.js.erb")
         context = { options: options }
         content = Erubis::FastEruby.new(File.read(file)).evaluate(context)
-        content = Uglifier.compile(content) if options.minify
 
-        if options.output.to_sym == :html
-          content = indent(content) unless options.minify
-          content_tag(:script, content)
+        if options.variant.to_sym == :analytics
+          if options.output.to_sym == :html
+            content = options.minify ? Uglifier.compile(content) : indent("\n" + content)
+            content_tag(:script, content)
+          else
+            options.minify ? Uglifier.compile(content) : content
+          end
         else
-          content
+          if options.output.to_sym == :html
+            content.gsub(/(?<=<script>)(.+)(?=<\/script>)/m) do
+              options.minify ? Uglifier.compile($1) : indent($1)
+            end
+          else
+            options.minify ? content.gsub(/.*<script>(.+)<\/script>/m) { Uglifier.compile($1) } : content
+          end
         end
       end
 
       # Ugly but true
       def indent(content)
-        str = "\n"
+        str = ''
         content.each_line { |line| str << line.indent(2) }
         str
       end
