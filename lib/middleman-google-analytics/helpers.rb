@@ -18,7 +18,7 @@ module Middleman
 
         if options.output.to_sym == :html
           content = indent(content) unless options.minify
-          content_tag(:script, content, type: 'text/javascript')
+          content_tag(:script, content)
         else
           content
         end
