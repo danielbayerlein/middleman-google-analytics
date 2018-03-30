@@ -16,7 +16,7 @@ module Middleman
     option :output, :html, 'Output style - :html includes <script> tag'
 
     def after_configuration
-      options.test = true if legacy_development?
+      options.test = true if ENV['TEST'] != 'true' && app.development?
 
       unless options.tracking_id
         $stderr.puts 'Google Analytics: Please specify a property ID'
@@ -36,19 +36,6 @@ module Middleman
 
     helpers do
       include ::Middleman::GoogleAnalytics::Helpers
-    end
-
-    private
-
-    def legacy_development?
-      return false if ENV['TEST'] == 'true'
-
-      # Middleman 3.4
-      is_development = try(:development?)
-      return is_development unless is_development.nil?
-
-      # Middleman 4.x
-      app.development?
     end
 
   end

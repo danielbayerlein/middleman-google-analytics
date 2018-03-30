@@ -19,10 +19,8 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.required_ruby_version = '>= 2.3.0'
-  s.add_dependency('middleman-core', ['>= 3.4'])
-  # Middleman 3.4.1 requires "uglifier ~> 2.5"
-  # Middleman 4.1.7 requires "uglifier ~> 3.0"
-  s.add_dependency('uglifier', ['>= 2.5', '< 4.0'])
-  s.add_dependency('activesupport', ['>= 4.1', '< 5.1'])
+  s.add_dependency('middleman-core', ['>= 4.0'])
+  s.add_dependency('uglifier', ['~> 3.0'])
+  s.add_dependency('activesupport', ['>= 4.2', '< 5.2'])
   s.add_dependency('erubis')
 end

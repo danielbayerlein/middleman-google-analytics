@@ -2,6 +2,7 @@
 
 ## ?.?.? (????-??-??)
 
+* Drop Middleman 3 support
 * Drop support for Ruby 2.2
 * Remove `type="text/javascript"`
 
