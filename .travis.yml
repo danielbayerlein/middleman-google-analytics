@@ -23,8 +23,4 @@ env:
   global:
     - TEST=true
 
-gemfile:
-  - Gemfile
-  - Gemfile-v3
-
 script: bundle exec rake test
