@@ -8,6 +8,7 @@ module Middleman
     option :domain_name, nil, 'Tracking across a domain and its subdomains'
     option :allow_linker, false, 'Tracking across multiple domains and subdomains'
     option :enhanced_link_attribution, false, 'Enhanced Link Attribution'
+    option :optimize, nil, 'Container ID'
     option :disable, false, 'Disable extension'
     option :debug, false, 'Log detail messages to the console'
     option :debug_trace, false, 'Trace debugging will output more verbose information to the console'

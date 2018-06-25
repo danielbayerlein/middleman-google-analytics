@@ -67,6 +67,9 @@ activate :google_analytics do |ga|
   # Enhanced Link Attribution (default = false)
   ga.enhanced_link_attribution = false
 
+  # Container ID for Google Optimize (A/B Testing)
+  ga.optimize = 'GTM-123456'
+
   # Log detail messages to the console (default = false)
   ga.debug = false
 
@@ -84,6 +87,7 @@ activate :google_analytics do |ga|
 
   # Output style - :html includes <script> tag (default = :html)
   ga.output = :js
+
 end
 ```
 
